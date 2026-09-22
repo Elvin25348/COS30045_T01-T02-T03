@@ -1,0 +1,132 @@
+:root {
+    --logo-yellow: #F7E596; 
+    --logo-orange: #EAA420; /* Updated to match the button in the image */
+    --nav-bg: #1B2635; /* Dark navy background from image */
+    --white: #FFFFFF;
+    --text-dark: #0F172A;
+    --box-bg: #FCFBF7; /* Light cream for the quick facts box */
+    --box-border: #E8E5DF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; padding: 0;
+    background-color: var(--white);
+    color: var(--text-dark);
+    display: flex; flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Updated Navigation Bar Styling */
+header {
+    background-color: var(--nav-bg);
+    border-bottom: 3px solid var(--logo-orange);
+}
+
+.header-container {
+    display: flex; 
+    align-items: center;
+    max-width: 900px; /* Aligns with main content */
+    margin: 0 auto;
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 45px; height: 45px;
+    margin-right: 20px; 
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+.logo:hover { transform: scale(1.05); }
+
+nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; }
+nav ul li { margin-right: 5px; }
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav ul li a.active-link {
+    background-color: var(--logo-orange);
+    color: var(--text-dark);
+}
+
+main {
+    flex-grow: 1;
+    padding: 40px 20px;
+    max-width: 900px; margin: 0 auto;
+    width: 100%; box-sizing: border-box;
+    animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Updated Typography */
+h1 {
+    color: var(--text-dark);
+    font-size: 2.2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* New Quick Facts Box Styling */
+.quick-facts-box {
+    background-color: var(--box-bg);
+    border: 1px solid var(--box-border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 25px;
+}
+
+.quick-facts-box h2 {
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.quick-facts-box ul {
+    line-height: 1.7;
+    margin: 0;
+    padding-left: 25px;
+}
+
+.quick-facts-box ul li {
+    margin-bottom: 5px;
+}
+
+.placeholder-box {
+    border: 2px dashed #79684F;
+    background-color: var(--logo-yellow);
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: var(--nav-bg);
+    color: var(--white);
+    text-align: center;
+    padding: 20px; font-size: 0.9em;
+    margin-top: auto;
+}

@@ -3,209 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Australian Appliance Energy Data</title>
-    
-    <!-- CSS STYLING -->
-    <style>
-        /* Extracting colors from the provided power logo */
-        :root {
-            --logo-yellow: #F7E596; /* Background circle color */
-            --logo-orange: #E4A043; /* Lightning bolt color */
-            --logo-brown: #79684F;  /* Border and line color */
-            --white: #FFFFFF;
-            --bg-gray: #FAFAFA;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-gray);
-            color: var(--logo-brown);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* Top Navigation Menu */
-        header {
-            background-color: var(--logo-brown);
-            display: flex;
-            align-items: center;
-            padding: 10px 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            width: 55px;
-            height: 55px;
-            cursor: pointer;
-            margin-right: auto; /* Pushes the navigation links to the right */
-            border-radius: 50%;
-            transition: transform 0.2s;
-        }
-
-        .logo:hover {
-            transform: scale(1.05);
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 15px;
-        }
-
-        nav ul li a {
-            color: var(--logo-yellow);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 15px;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            cursor: pointer;
-        }
-
-        /* Mouse Over Feedback */
-        nav ul li a:hover {
-            background-color: var(--logo-orange);
-            color: var(--white);
-        }
-
-        /* Current Page Feedback */
-        nav ul li a.active-link {
-            background-color: var(--logo-yellow);
-            color: var(--logo-brown);
-        }
-
-        /* Main Content Container */
-        main {
-            flex-grow: 1;
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* Page Swapping Classes */
-        .page-content {
-            display: none; /* Hides all pages by default */
-            animation: fadeIn 0.4s;
-        }
-
-        .active-page {
-            display: block; /* Shows only the active page */
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        h1, h2 {
-            color: var(--logo-orange);
-            border-bottom: 2px solid var(--logo-yellow);
-            padding-bottom: 10px;
-        }
-
-        .placeholder-box {
-            border: 2px dashed var(--logo-brown);
-            background-color: var(--logo-yellow);
-            padding: 50px 20px;
-            text-align: center;
-            margin-top: 30px;
-            border-radius: 8px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--logo-brown);
-            color: var(--logo-yellow);
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            margin-top: auto;
-        }
-    </style>
+    <title>Home - Australian Appliance Energy Data</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <header>
-        <!-- Clicking the logo returns the user to the Home page -->
-        <img src="logo.png" alt="Power Logo" class="logo" onclick="swapPage('home')" title="Return to Home">
-        
-        <nav>
-            <ul>
-                <li><a id="link-home" onclick="swapPage('home')" class="active-link">Home</a></li>
-                <li><a id="link-televisions" onclick="swapPage('televisions')">Televisions</a></li>
-                <li><a id="link-about" onclick="swapPage('about')">About Us</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <a href="index.html" title="Return to Home">
+                <img src="logo.png" alt="Power Logo" class="logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active-link">Home</a></li>
+                    <li><a href="televisions.html">Televisions</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content Area -->
     <main>
-        
-        <!-- Home Page Section -->
-        <section id="home" class="page-content active-page">
-            <h1>Appliance Energy Consumption</h1>
-            <p>Welcome to our data visualization platform. Understanding energy consumption is vital for Australian households aiming to reduce electricity bills and lower their environmental footprint.</p>
-            <p>The Australian energy market is rapidly changing, and major household appliances dictate a significant portion of peak grid demand. Navigate through this site to learn more about specific appliances and view interactive analytics.</p>
-        </section>
-
-        <!-- Televisions Page Section -->
-        <section id="televisions" class="page-content">
-            <h1>Televisions</h1>
-            <p>Televisions are one of the most frequently used appliances in Australian homes. With the increasing size of modern screens and the rise of 4K/8K technologies, it is highly important to track their active and standby power draw.</p>
+        <section id="home">
+            <h1>Appliance Energy Use in Australia</h1>
+            <p>This site gives a simple overview of household appliance energy consumption in the Australian market.</p>
             
-            <div class="placeholder-box">
-                <h3 style="color: var(--logo-brown);">Interactive Data Visualization Area</h3>
-                <p><em>Placeholder: KNIME data visualisations detailing television energy consumption across different Australian states will be embedded here in the next task.</em></p>
+            <div class="quick-facts-box">
+                <h2>Quick facts</h2>
+                <ul>
+                    <li>Energy labels (star ratings) help compare appliance efficiency at a glance.</li>
+                    <li>Standby power can add unexpected costs—turn devices fully off when not in use.</li>
+                    <li>Choosing higher-efficiency models usually pays back through lower electricity bills.</li>
+                </ul>
             </div>
         </section>
-
-        <!-- About Us Page Section -->
-        <section id="about" class="page-content">
-            <h1>About Us</h1>
-            <p>We are focused on providing transparent, accessible data regarding domestic energy usage.</p>
-            <p>Our upcoming visualisations utilize KNIME data workflows to break down complex appliance consumption metrics into easy-to-read, interactive charts, empowering consumers to make energy-efficient choices.</p>
-        </section>
-
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Elvin Pui Yung Kit</p>
         <p><small>Code and content generated with the assistance of GenAI.</small></p>
     </footer>
 
-    <!-- JAVASCRIPT FOR PAGE SWAPPING -->
-    <script>
-        function swapPage(targetPageId) {
-            // 1. Hide all page sections
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => {
-                page.classList.remove('active-page');
-            });
-
-            // 2. Remove the "active" highlight from all navigation links
-            const links = document.querySelectorAll('nav ul li a');
-            links.forEach(link => {
-                link.classList.remove('active-link');
-            });
-
-            // 3. Show the newly selected page
-            document.getElementById(targetPageId).classList.add('active-page');
-
-            // 4. Highlight the newly selected navigation link
-            document.getElementById('link-' + targetPageId).classList.add('active-link');
-        }
-    </script>
 </body>
 </html>

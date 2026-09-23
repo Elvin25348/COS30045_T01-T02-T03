@@ -5,6 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Televisions - Australian Appliance Energy Data</title>
     <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* Specific styling for the Televisions page layout */
+        .chart-container {
+            margin-bottom: 40px;
+        }
+        
+        .chart-container h3 {
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .chart-container h4 {
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        
+        .chart-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--box-border);
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .chart-description {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+    </style>
 </head>
 <body>
 
@@ -25,13 +57,69 @@
 
     <main>
         <section id="televisions">
-            <h1>Televisions</h1>
-            <p>Televisions are one of the most frequently used appliances in Australian homes. With the increasing size of modern screens and the rise of 4K/8K technologies, it is highly important to track their active and standby power draw.</p>
+            <h1>Television Energy Tips</h1>
             
-            <div class="placeholder-box">
-                <h3 style="color: #79684F;">Interactive Data Visualization Area</h3>
-                <p><em>Placeholder: KNIME data visualisations detailing television energy consumption across different Australian states will be embedded here in the next task.</em></p>
+            <div class="quick-facts-box" style="margin-top: 0; margin-bottom: 40px;">
+                <p><strong>Size & technology matter.</strong> Larger screens and older tech (e.g., plasma) use more energy. Modern LED/LCD and OLED sets are generally more efficient.</p>
+                <ul>
+                    <li>Use the TV's <em>Energy Saver</em> or <em>Eco</em> mode and reduce brightness where comfortable.</li>
+                    <li>Disable "always-listening" voice features if you don't use them; they can add standby draw.</li>
+                    <li>Consider star rating and annual kWh on the energy label when purchasing.</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #666;">Placeholder note: Insert simple examples of annual kWh for common TV sizes in Australia to make this page concrete.</p>
             </div>
+
+            <h2>TV Energy Insights: Data Story</h2>
+            <p>This section presents findings from the Australian Government's Television Energy Rating dataset. The aim is to help Australian consumers make informed decisions about technology, size, brand, and efficiency.</p>
+
+            <!-- Chart 1 -->
+            <div class="chart-container">
+                <h3>Chart 1: What TV technologies are most common?</h3>
+                <h4>Pie Chart</h4>
+                <img src="chart_1.png" alt="Pie chart showing TV technologies" class="chart-image">
+                <p class="chart-description">Most TVs in Australia are LCD LED, while OLED is less common.</p>
+            </div>
+
+            <!-- Chart 2 -->
+            <div class="chart-container">
+                <h3>Chart 2: What screen sizes are most frequent?</h3>
+                <h4>Bar Chart</h4>
+                <img src="chart_2.png" alt="Bar chart showing screen sizes" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 2 here]</em></p>
+            </div>
+
+            <!-- Chart 3 -->
+            <div class="chart-container">
+                <h3>Chart 3: [Insert Title for Chart 3]</h3>
+                <h4>[Insert Chart Type]</h4>
+                <img src="chart_3.png" alt="Chart 3" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 3 here]</em></p>
+            </div>
+
+            <!-- Chart 4 -->
+            <div class="chart-container">
+                <h3>Chart 4: [Insert Title for Chart 4]</h3>
+                <h4>[Insert Chart Type]</h4>
+                <img src="chart_4.png" alt="Chart 4" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 4 here]</em></p>
+            </div>
+
+            <!-- Chart 5 -->
+            <div class="chart-container">
+                <h3>Chart 5: [Insert Title for Chart 5]</h3>
+                <h4>[Insert Chart Type]</h4>
+                <img src="chart_5.png" alt="Chart 5" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 5 here]</em></p>
+            </div>
+
+            <!-- Chart 6 -->
+            <div class="chart-container">
+                <h3>Chart 6: [Insert Title for Chart 6]</h3>
+                <h4>[Insert Chart Type]</h4>
+                <img src="chart_6.png" alt="Chart 6" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 6 here]</em></p>
+            </div>
+
         </section>
     </main>
 

@@ -1,31 +1,31 @@
 function loadPage(event, url, linkId) {
-    // 阻止瀏覽器預設的跳轉頁面行為
+    // Prevent the browser's default page navigation behavior
     event.preventDefault();
 
     fetch(url)
         .then(response => {
-            if (!response.ok) throw new Error('無法載入頁面');
+            if (!response.ok) throw new Error('Failed to load page');
             return response.text();
         })
         .then(html => {
-            // 解析抓取到的完整 HTML 字串
+            // Parse the fetched complete HTML string
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
 
-            // 提取目標頁面 <main> 裡面的內容，並替換當前頁面的 <main>
+            // Extract the content inside the target page's <main> and replace the current page's <main>
             const newMainContent = doc.querySelector('main').innerHTML;
             document.querySelector('main').innerHTML = newMainContent;
 
-            // 清除所有導覽列按鈕的高亮狀態
+            // Remove the active highlight state from all navigation links
             document.querySelectorAll('nav ul li a').forEach(link => {
                 link.classList.remove('active-link');
             });
 
-            // 為當前點擊的按鈕加上高亮狀態
+            // Add the active highlight state to the currently clicked button
             document.getElementById(linkId).classList.add('active-link');
             
-            // 可選：更新瀏覽器的網址列，讓使用者感覺真的切換了頁面
+            // Optional: Update the browser's URL bar so the user feels like the page actually changed
             window.history.pushState({}, '', url);
         })
-        .catch(error => console.error('Fetch 錯誤:', error));
+        .catch(error => console.error('Fetch error:', error));
 }

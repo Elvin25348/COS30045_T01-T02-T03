@@ -162,3 +162,13 @@ footer {
     line-height: 1.6;
     color: var(--text-dark);
 }
+
+/* 控制頁面顯示/隱藏的 CSS */
+.page-content {
+    display: none; 
+    animation: fadeIn 0.4s;
+}
+
+.active-page {
+    display: block; 
+}

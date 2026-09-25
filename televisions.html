@@ -11,14 +11,16 @@
 
     <header>
         <div class="header-container">
-            <a href="index.html" title="Return to Home">
+            <!-- 加上 onclick 呼叫 loadPage -->
+            <a href="index.html" title="Return to Home" onclick="loadPage(event, 'index.html', 'link-home')">
                 <img src="logo.png" alt="Power Logo" class="logo">
             </a>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="televisions.html" class="active-link">Televisions</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <!-- 全部換成 loadPage 的寫法，並設定這頁的高亮 -->
+                    <li><a id="link-home" href="index.html" onclick="loadPage(event, 'index.html', 'link-home')">Home</a></li>
+                    <li><a id="link-televisions" href="televisions.html" onclick="loadPage(event, 'televisions.html', 'link-televisions')" class="active-link">Televisions</a></li>
+                    <li><a id="link-about" href="about.html" onclick="loadPage(event, 'about.html', 'link-about')">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -96,6 +98,8 @@
         <p>&copy; 2026 Elvin Pui Yung Kit</p>
         <p><small>Code and content generated with the assistance of GenAI.</small></p>
     </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>

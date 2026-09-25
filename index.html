@@ -3,28 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Australian Appliance Energy Data</title>
+    <title>Australian Appliance Energy Data</title>
+    <!-- 引入外部 CSS -->
     <link rel="stylesheet" href="style/style.css">
+    <style>
+        /* 控制頁面顯示/隱藏的 CSS 必須加回來 */
+        .page-content {
+            display: none; 
+            animation: fadeIn 0.4s;
+        }
+        .active-page {
+            display: block; 
+        }
+    </style>
 </head>
 <body>
 
     <header>
         <div class="header-container">
-            <a href="index.html" title="Return to Home">
+            <!-- 點擊 Logo 執行 JavaScript 切換回 Home -->
+            <a href="#" title="Return to Home" onclick="swapPage('home'); return false;">
                 <img src="logo.png" alt="Power Logo" class="logo">
             </a>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active-link">Home</a></li>
-                    <li><a href="televisions.html">Televisions</a></li>
-                    <li><a href="about.html">About Us</a></li>
+                    <!-- onclick 觸發 JavaScript 函數進行切換 -->
+                    <li><a id="link-home" href="#" onclick="swapPage('home'); return false;" class="active-link">Home</a></li>
+                    <li><a id="link-televisions" href="#" onclick="swapPage('televisions'); return false;">Televisions</a></li>
+                    <li><a id="link-about" href="#" onclick="swapPage('about'); return false;">About Us</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section id="home">
+        <!-- ================= HOME PAGE ================= -->
+        <section id="home" class="page-content active-page">
             <h1>Appliance Energy Use in Australia</h1>
             <p>This site gives a simple overview of household appliance energy consumption in the Australian market.</p>
             
@@ -37,12 +51,82 @@
                 </ul>
             </div>
         </section>
+
+        <!-- ================= TELEVISIONS PAGE ================= -->
+        <section id="televisions" class="page-content">
+            <h1>Television Energy Tips</h1>
+            
+            <div class="quick-facts-box" style="margin-top: 0; margin-bottom: 40px;">
+                <p><strong>Size & technology matter.</strong> Larger screens and older tech (e.g., plasma) use more energy. Modern LED/LCD and OLED sets are generally more efficient.</p>
+                <ul>
+                    <li>Use the TV's <em>Energy Saver</em> or <em>Eco</em> mode and reduce brightness where comfortable.</li>
+                    <li>Disable "always-listening" voice features if you don't use them; they can add standby draw.</li>
+                    <li>Consider star rating and annual kWh on the energy label when purchasing.</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic; color: #666;">Placeholder note: Insert simple examples of annual kWh for common TV sizes in Australia to make this page concrete.</p>
+            </div>
+
+            <h2>TV Energy Insights: Data Story</h2>
+            <p>This section presents findings from the Australian Government's Television Energy Rating dataset. The aim is to help Australian consumers make informed decisions about technology, size, brand, and efficiency.</p>
+
+            <!-- Chart 1 -->
+            <div class="chart-container">
+                <h3>Chart 1: What TV technologies are most common?</h3>
+                <h4>Pie Chart</h4>
+                <img src="chart_1.png" alt="Pie chart showing TV technologies" class="chart-image">
+                <p class="chart-description">Most TVs in Australia are LCD LED, while OLED is less common.</p>
+            </div>
+
+            <!-- Chart 2 -->
+            <div class="chart-container">
+                <h3>Chart 2: What screen sizes are most frequent?</h3>
+                <h4>Bar Chart</h4>
+                <img src="chart_2.png" alt="Bar chart showing screen sizes" class="chart-image">
+                <p class="chart-description"><em>[Add description for Chart 2 here]</em></p>
+            </div>
+            
+            <!-- Chart 3 to 6 placeholders -->
+            <div class="chart-container">
+                <h3>Chart 3: [Insert Title]</h3>
+                <img src="chart_3.png" alt="Chart 3" class="chart-image">
+            </div>
+            <div class="chart-container">
+                <h3>Chart 4: [Insert Title]</h3>
+                <img src="chart_4.png" alt="Chart 4" class="chart-image">
+            </div>
+            <div class="chart-container">
+                <h3>Chart 5: [Insert Title]</h3>
+                <img src="chart_5.png" alt="Chart 5" class="chart-image">
+            </div>
+            <div class="chart-container">
+                <h3>Chart 6: [Insert Title]</h3>
+                <img src="chart_6.png" alt="Chart 6" class="chart-image">
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>When choosing a TV, balance size, brand, and efficiency. A 55-inch LED TV is common and energy-smart for most households.</p>
+        </section>
+
+        <!-- ================= ABOUT US PAGE ================= -->
+        <section id="about" class="page-content">
+            <h1>About This Site</h1>
+            <p>This educational website demonstrates basic web development and shares simple pointers on appliance energy consumption in Australia.</p>
+            
+            <div class="quick-facts-box">
+                <h2>Credits</h2>
+                <p>Created by <strong>Elvin Pui Yung Kit</strong>. Design colours match the lightning "power" logo.</p>
+                <p>GenAI tools were used to help draft starter code and placeholder text.</p>
+            </div>
+        </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Elvin Pui Yung Kit</p>
         <p><small>Code and content generated with the assistance of GenAI.</small></p>
     </footer>
+
+    <!-- 引入外部 JavaScript 檔案 -->
+    <script src="js/script.js"></script>
 
 </body>
 </html>
